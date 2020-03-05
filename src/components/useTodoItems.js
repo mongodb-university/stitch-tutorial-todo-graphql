@@ -255,7 +255,7 @@ export function useTodoItems(userId) {
   }, [loadData]);
 
   React.useEffect(() => {
-    loadTodos();
+    loadTodos({ variables: { "owner_id": userId } });
   }, []);
 
   return {
