@@ -93,7 +93,7 @@ export function useTodoItems(userId) {
       }
     }
   `;
-  const [ addOne, ] = useMutation(ADD_ONE);
+  const [addOne] = useMutation(ADD_ONE);
   const addTodo = async task => {
     const { data } = await addOne(
       {
@@ -116,7 +116,7 @@ export function useTodoItems(userId) {
       }
     }
   `;
-  const [deleteOne, ] = useMutation(DELETE_ONE);
+  const [deleteOne] = useMutation(DELETE_ONE);
   const removeTodo = async todoId => {
     await deleteOne(
       {
@@ -138,7 +138,7 @@ export function useTodoItems(userId) {
       }
     }
   `;
-  const [deleteAll, ] = useMutation(DELETE_ALL);
+  const [deleteAll] = useMutation(DELETE_ALL);
   const clearTodos = async () => {
     await deleteAll();
     dispatch({ type: "clearTodos" });
@@ -151,7 +151,7 @@ export function useTodoItems(userId) {
       }
     }
   `;
-  const [deleteCompleted, ] = useMutation(DELETE_COMPLETED);
+  const [deleteCompleted] = useMutation(DELETE_COMPLETED);
   const clearCompletedTodos = async () => {
     await deleteCompleted(
       {
@@ -173,7 +173,7 @@ export function useTodoItems(userId) {
       }
     }
   `;
-  const [setStatus, ] = useMutation(SET_STATUS);
+  const [setStatus] = useMutation(SET_STATUS);
   const setTodoCompletionStatus = async (todoId, status) => {
     await setStatus(
       { 
@@ -193,7 +193,7 @@ export function useTodoItems(userId) {
       }
     }
   `;
-  const [completeAll, ] = useMutation(COMPLETE_ALL);
+  const [completeAll] = useMutation(COMPLETE_ALL);
   const completeAllTodos = async () => {
     await completeAll(
       { 
@@ -225,7 +225,7 @@ export function useTodoItems(userId) {
       }
     }
   `;
-  const [toggleTodo, ] = useMutation(TOGGLE_TODO);
+  const [toggleTodo] = useMutation(TOGGLE_TODO);
   const toggleTodoStatus = async todoId => {
     findTodo({ variables: { "query": { "_id": todoId } } });
   };
